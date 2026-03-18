@@ -27,8 +27,11 @@ const carta1 = document.getElementById('carta1');
 const carta2 = document.getElementById('carta2');
 
 // Cargar lo que había guardado
-carta1.value = localStorage.getItem('carta1') || '';
-carta2.value = localStorage.getItem('carta2') || '';
+const guardado1 = localStorage.getItem('carta1');
+const guardado2 = localStorage.getItem('carta2');
+
+if (guardado1) carta1.value = guardado1;
+if (guardado2) carta2.value = guardado2;
 
 // Guardar cada vez que escriben
 carta1.addEventListener('input', () => {
